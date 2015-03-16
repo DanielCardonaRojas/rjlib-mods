@@ -137,7 +137,7 @@ automatically.;
 #N canvas 48 79 970 587 filterQlistAdd 0;
 #X floatatom 417 194 5 0 0 0 - - -, f 5;
 #X obj 417 238 tgl 15 0 empty empty is_eq_to_prev_ch? 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 417 168 cc_indexList 0;
 #X obj 220 171 cc_indexList 1;
 #X obj 220 238 cc_not;
@@ -226,13 +226,13 @@ channels -> depends: if previous note was off then prepend else dont.
 #N canvas 120 101 442 506 chChangeWithVelDiff0 0;
 #X floatatom 104 140 5 0 0 0 - - -, f 5;
 #X obj 104 184 tgl 15 0 empty empty is_eq_to_prev_ch? 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 104 114 cc_indexList 0;
 #X obj -68 111 cc_isEqualToPrevious;
 #X obj 34 150 f;
 #X obj -68 81 cc_indexList 3;
 #X obj 34 172 == 0;
-#X obj 34 194 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 34 194 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj -5 128 t b;
 #X text -7 403 only throw 0 when a ch changed has arised and not sequence
@@ -279,9 +279,8 @@ Which means a sequence of velocities 0 #.;
 #X obj 56 257 r \$0-chDidChange;
 #X obj 220 280 sel 1;
 #X msg 220 302 0;
-#X obj 669 218 print ChChange;
 #X obj 417 215 cc_isEqualToPrevious;
-#X connect 0 0 29 0;
+#X connect 0 0 28 0;
 #X connect 1 0 23 0;
 #X connect 2 0 0 0;
 #X connect 3 0 9 0;
@@ -300,13 +299,12 @@ Which means a sequence of velocities 0 #.;
 #X connect 19 3 21 0;
 #X connect 20 0 17 0;
 #X connect 21 0 20 0;
-#X connect 21 0 28 0;
 #X connect 22 0 16 0;
 #X connect 24 0 17 0;
 #X connect 25 0 24 1;
 #X connect 26 0 27 0;
 #X connect 27 0 17 0;
-#X connect 29 0 1 0;
+#X connect 28 0 1 0;
 #X restore 339 149 pd filterQlistAdd;
 #X connect 0 0 23 0;
 #X connect 0 1 22 0;
