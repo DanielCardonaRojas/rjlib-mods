@@ -1,0 +1,6 @@
+#N canvas 639 153 286 240 10;
+#X obj 16 54 cc_route noteon 2;
+#X msg 16 27 ch 0 noteon 43 45;
+#X obj 16 76 print R;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
